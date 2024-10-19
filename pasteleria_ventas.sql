@@ -1,0 +1,58 @@
+-- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
+--
+-- Host: localhost    Database: pasteleria
+-- ------------------------------------------------------
+-- Server version	8.0.26
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `ventas`
+--
+
+DROP TABLE IF EXISTS `ventas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ventas` (
+  `Folio` int NOT NULL AUTO_INCREMENT,
+  `CantidadVendida` int NOT NULL,
+  `Subtotal` decimal(7,2) NOT NULL,
+  `Total` decimal(7,2) NOT NULL,
+  `FechaDeVenta` date NOT NULL,
+  `Users_FK` int DEFAULT NULL,
+  `Codigo_Producto` varchar(14) DEFAULT NULL,
+  `Productos` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Folio`),
+  KEY `UserID_ibfk_1` (`Users_FK`)
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ventas`
+--
+
+LOCK TABLES `ventas` WRITE;
+/*!40000 ALTER TABLE `ventas` DISABLE KEYS */;
+INSERT INTO `ventas` VALUES (56,5,100.00,120.00,'2023-01-01',1002,'ABC123456789','Pastel de Queso'),(57,3,50.00,60.00,'2023-01-02',1003,'DEF987654321','Pastel de Queso'),(58,8,200.00,240.00,'2023-01-03',1003,'GHI111223344','Pastel de Queso'),(69,4,80.00,96.00,'2023-01-04',1004,'JKL445566778','Torta de Chocolate'),(70,6,120.00,144.00,'2023-01-05',1002,'MNO889900112','Torta de Fresa'),(71,2,40.00,48.00,'2023-01-06',1003,'PQR223344556','Torta de Vainilla'),(72,7,140.00,168.00,'2023-01-07',1004,'STU667788990','Galletas de Avena'),(73,3,60.00,72.00,'2023-01-08',1006,'VWX112233445','Galletas de Chocolate'),(74,5,100.00,120.00,'2023-01-09',1003,'YZA987654321','Galletas de Mantequilla'),(75,9,180.00,216.00,'2023-01-10',1004,'BCD555566667','Cupcakes de Vainilla'),(76,1,20.00,24.00,'2023-01-11',1006,'EFG888899990','Cupcakes de Chocolate'),(77,8,160.00,192.00,'2023-01-12',1003,'HIJ111122223','Cupcakes de Fresa'),(78,4,80.00,96.00,'2023-01-13',1004,'KLM444455556','Brownies'),(79,5,25.00,30.00,'2023-12-01',1002,'ABC123','Pastel Chocolate'),(80,3,15.00,18.00,'2023-12-02',1002,'DEF456','Pastel Vainilla'),(81,7,35.00,42.00,'2023-12-03',1002,'GHI789','Pastel Fresa'),(82,2,10.00,12.00,'2023-12-04',1004,'JKL012','Pastel Limón'),(83,4,20.00,24.00,'2023-12-05',1002,'MNO345','Pastel Manzana'),(84,6,30.00,36.00,'2023-12-06',1002,'PQR678','Pastel Naranja'),(85,8,40.00,48.00,'2023-12-07',1002,'STU901','Pastel Uva'),(86,1,5.00,6.00,'2023-12-08',1002,'VWX234','Pastel Chocolate Blanco'),(87,9,45.00,54.00,'2023-12-09',1002,'YZA567','Pastel Coco'),(88,10,50.00,60.00,'2023-12-10',1003,'BCD890','Pastel Mango');
+/*!40000 ALTER TABLE `ventas` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-09-24 16:09:22
